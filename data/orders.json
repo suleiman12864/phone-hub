@@ -1,0 +1,26 @@
+[
+  {
+    "orderId": "PH-1789475984366",
+    "paymentMethod": "Pay on Delivery",
+    "paymentStatus": "Pending",
+    "paystackReference": "",
+    "name": "ISAH MOHAMMED",
+    "phone": "90111111111111",
+    "whatsapp": "+234 XXX XXX XXXX",
+    "email": "maestra7586@gmail.com",
+    "address": "Sheikh Alimi",
+    "state": "Kwara",
+    "note": "",
+    "products": [
+      {
+        "productId": "PH-001",
+        "model": "iPhone 15 Pro Max",
+        "quantity": 1,
+        "price": 1250000
+      }
+    ],
+    "total": 1250000,
+    "date": "2026-09-15T12:39:44.367Z",
+    "status": "New"
+  }
+]

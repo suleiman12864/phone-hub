@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Admin Dashboard — PHONE HUB</title>
+    <link rel="stylesheet" href="/src/frontend/css/base.css">
+    <link rel="stylesheet" href="/src/frontend/css/layout.css">
+    <link rel="stylesheet" href="/src/frontend/css/components.css">
+    <link rel="stylesheet" href="/src/frontend/css/admin.css">
+</head>
+<body>
+    <!-- Login Screen -->
+    <div id="login" class="auth-container">
+        <div class="auth-card">
+            <h1>PHONE HUB ADMIN</h1>
+            <p class="muted" style="margin-bottom:20px;">Enter your admin password to access dashboard</p>
+            <div class="password-wrap">
+                <input id="password" type="password" placeholder="Admin Password">
+                <button type="button" id="togglePassword" class="password-toggle">Show</button>
+            </div>
+            <button class="btn" style="width:100%; margin-top:10px;" onclick="login()">SIGN IN</button>
+        </div>
+    </div>
+
+    <!-- Main Dashboard -->
+    <div id="dash" class="hidden">
+        <header>
+            <a class="logo" href="index.html">PHONE<span>HUB</span></a>
+            <div class="header-actions">
+                <a href="index.html" class="btn-icon btn-secondary">Storefront</a>
+                <button onclick="logout()" class="btn-icon btn-secondary">Logout</button>
+            </div>
+        </header>
+
+        <main>
+            <div class="adminHead">
+                <div>
+                    <small style="color:var(--accent-gold); font-weight:700;">MANAGEMENT PANEL</small>
+                    <h1 style="font-size:32px; font-weight:800;">Admin Dashboard</h1>
+                </div>
+                <button class="btn" onclick="edit()">+ ADD PRODUCT</button>
+            </div>
+
+            <div id="stats"></div>
+
+            <h2 style="font-size:24px; font-weight:700; margin: 30px 0 16px;">Products Catalog</h2>
+            <div id="table"></div>
+
+            <h2 style="font-size:24px; font-weight:700; margin: 30px 0 16px;">Customer Orders</h2>
+            <div id="orders"></div>
+
+            <h2 style="font-size:24px; font-weight:700; margin: 30px 0 16px;">Business Settings</h2>
+            <form id="settings"></form>
+        </main>
+    </div>
+
+    <!-- Edit/Create Product Modal -->
+    <div id="editor" class="overlay hidden">
+        <div class="modal">
+            <button class="modal-close-btn" onclick="document.getElementById('editor').classList.add('hidden')">×</button>
+            <h2 style="font-size:24px; font-weight:700; margin-bottom:20px;">Manage Product</h2>
+            <form id="productForm"></form>
+        </div>
+    </div>
+
+    <script type="module" src="/src/frontend/js/admin-main.js"></script>
+</body>
+</html>

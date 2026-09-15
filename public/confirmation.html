@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Order Confirmed — PHONE HUB</title>
+    <link rel="stylesheet" href="/src/frontend/css/base.css">
+    <link rel="stylesheet" href="/src/frontend/css/layout.css">
+    <link rel="stylesheet" href="/src/frontend/css/components.css">
+    <link rel="stylesheet" href="/src/frontend/css/admin.css">
+</head>
+<body>
+    <main class="auth-container">
+        <div class="auth-card" style="width: min(520px, 100%);">
+            <small style="color:var(--accent-gold); font-weight:700; letter-spacing:1px;">PHONE HUB STORE</small>
+            <h1 style="font-size:32px; font-weight:800; margin:10px 0;">Order Received 🎉</h1>
+            <p class="muted" style="margin-bottom:20px;">Thank you for shopping with us. Your order has been placed successfully.</p>
+            
+            <div style="background:var(--bg-primary); border:1px solid var(--border-color); padding:18px; border-radius:var(--radius-md); margin-bottom:24px;">
+                <small style="color:var(--text-muted); font-size:12px;">ORDER REFERENCE NUMBER</small>
+                <h2 id="id" style="font-size:24px; font-weight:800; color:var(--accent-gold); margin-top:4px;"></h2>
+                <div id="paymentDetails" style="margin-top:12px; font-size:14px; text-align:left; border-top:1px dashed var(--border-color); padding-top:12px;"></div>
+            </div>
+            
+            <a class="btn" href="index.html" style="width:100%;">BACK TO STORE</a>
+        </div>
+    </main>
+    <script>
+        const params = new URLSearchParams(location.search);
+        const id = params.get("id") || "";
+        const method = params.get("method") || "";
+        const ref = params.get("ref") || "";
+        document.getElementById("id").textContent = id;
+
+        const detailsEl = document.getElementById("paymentDetails");
+        if (method === "paystack") {
+            detailsEl.innerHTML = `<p style="color:#2ecc71; font-weight:700; margin:0;">✔ Payment Status: Paid via Paystack</p>` + 
+                (ref ? `<small class="muted" style="font-size:12px;">Paystack Ref: ${ref}</small>` : '');
+        } else if (method === "cod") {
+            detailsEl.innerHTML = `<p style="color:var(--accent-gold); font-weight:700; margin:0;">⏳ Payment Status: Pay on Delivery</p>`;
+        }
+    </script>
+
+</body>
+</html>

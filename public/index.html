@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PHONE HUB — Premium Smartphones & Accessories</title>
+    <meta name="description" content="Shop genuine smartphones, compare detailed specifications and order with confidence from Phone Hub.">
+    <link rel="stylesheet" href="/src/frontend/css/base.css">
+    <link rel="stylesheet" href="/src/frontend/css/layout.css">
+    <link rel="stylesheet" href="/src/frontend/css/components.css">
+</head>
+<body>
+    <header>
+        <a class="logo" href="#">PHONE<span>HUB</span></a>
+        <nav>
+            <a href="#home" class="active">Home</a>
+            <a href="#shop">Shop Phones</a>
+            <a href="#reviews">Reviews</a>
+            <a href="#faq">FAQs</a>
+            <a href="#contact">Contact</a>
+        </nav>
+        <div class="header-actions">
+            <button id="cartBtn" class="btn-icon" aria-label="Open Shopping Cart">🛒 Cart <b id="count">0</b></button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <small>🔥 OFFICIAL SMARTPHONE STORE</small>
+            <h1>PREMIUM<br><em>SMARTPHONES</em></h1>
+            <h3>BEYOND EXTRAORDINARY.</h3>
+            <p>Shop 100% genuine iPhones and Android smartphones with full specifications, transparent condition ratings, and fast nationwide delivery.</p>
+            <a class="btn" href="#shop">SHOP STORE NOW</a>
+
+            <div class="hero-metrics">
+                <div class="hero-metric-item">
+                    <span>🛡️</span> 100% Genuine Devices
+                </div>
+                <div class="hero-metric-item">
+                    <span>✨</span> Grade A Quality
+                </div>
+                <div class="hero-metric-item">
+                    <span>🚀</span> Same-Day Delivery
+                </div>
+            </div>
+        </div>
+        <div class="hero-img-wrap">
+            <img src="/images/photo.jpg" alt="Phone Hub Genuine Smartphone Collection" onerror="this.src='https://placehold.co/700x700/171717/D4AF37?text=PHONE+HUB'">
+        </div>
+    </section>
+
+    <!-- Shop Catalog Section -->
+    <section id="shop">
+        <div class="section-head">
+            <div>
+                <small>DISCOVER YOUR NEXT PHONE</small>
+                <h2>Our Smartphone Collection</h2>
+            </div>
+            <div class="search-wrap">
+                <input id="search" placeholder="Search model, storage, RAM..." aria-label="Search smartphones">
+                <button id="clearSearch" class="search-clear-btn" aria-label="Clear search">×</button>
+            </div>
+        </div>
+        <div id="filters"></div>
+        <div id="products"></div>
+    </section>
+
+    <!-- Verified Reviews Section -->
+    <section id="reviews" style="background: var(--bg-surface);">
+        <div class="section-head">
+            <div>
+                <small>TESTIMONIALS</small>
+                <h2>What Our Customers Say</h2>
+            </div>
+        </div>
+        <div class="grid">
+            <div class="review-card">
+                <div class="review-stars">★★★★★</div>
+                <p>"Bought a UK-used iPhone 13 Pro. The battery health was 89% as advertised and screen was immaculate. Delivered same day in Lagos!"</p>
+                <div class="review-author">
+                    Emeka N.
+                    <small>Verified Buyer · Lagos</small>
+                </div>
+            </div>
+            <div class="review-card">
+                <div class="review-stars">★★★★★</div>
+                <p>"Very transparent specs listing. Phone Hub gives exact details on repair history and parts. Top notch customer service!"</p>
+                <div class="review-author">
+                    Aisha B.
+                    <small>Verified Buyer · Abuja</small>
+                </div>
+            </div>
+            <div class="review-card">
+                <div class="review-stars">★★★★★</div>
+                <p>"Quick WhatsApp ordering! Placed order and received my Samsung Galaxy S23 Ultra in original box within 24 hours."</p>
+                <div class="review-author">
+                    David O.
+                    <small>Verified Buyer · Port Harcourt</small>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Accordion Section -->
+    <section id="faq">
+        <div class="section-head">
+            <div>
+                <small>FREQUENTLY ASKED QUESTIONS</small>
+                <h2>Got Questions? We Have Answers</h2>
+            </div>
+        </div>
+        <div class="faq-list">
+            <div class="faq-item">
+                <div class="faq-question">Are all UK-used phones thoroughly tested?</div>
+                <div class="faq-answer">Yes! Every smartphone undergoes a rigorous 30-point inspection covering screen condition, battery health, biometric sensor functionality, speaker quality, and camera performance before listing.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">How does delivery and payment work?</div>
+                <div class="faq-answer">We offer same-day delivery within major metropolitan areas (Lagos, Abuja) and express courier shipping nationwide. Payment can be made online via checkout or via direct WhatsApp order.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">What warranty is provided on purchased phones?</div>
+                <div class="faq-answer">All brand new devices carry full manufacturer warranty. UK-used and refurbished phones come with a standard Phone Hub 30-day testing guarantee.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Info Section -->
+    <section id="contact">
+        <div class="section-head">
+            <div>
+                <small>TALK TO US</small>
+                <h2>Contact Phone Hub</h2>
+            </div>
+        </div>
+        <div id="contactInfo"></div>
+    </section>
+
+    <!-- Detailed Product Specs Modal -->
+    <div id="modal" class="overlay hidden" role="dialog" aria-modal="true">
+        <div class="modal">
+            <button class="modal-close-btn" onclick="closeModal()" aria-label="Close modal">×</button>
+            <div id="details"></div>
+        </div>
+    </div>
+
+    <!-- Cart Sidebar Drawer -->
+    <aside id="cart">
+        <div class="cart-header">
+            <h2>Your Shopping Cart</h2>
+            <button class="cart-close-btn" onclick="toggleCart()" aria-label="Close cart">×</button>
+        </div>
+        <div id="cartItems"></div>
+        <div class="cart-footer">
+            <h3>Subtotal <span id="total">₦0</span></h3>
+            <a class="btn" href="checkout.html" style="width:100%;">PROCEED TO CHECKOUT</a>
+        </div>
+    </aside>
+
+    <!-- Mobile Floating Action Cart Button -->
+    <button id="fabCartBtn" class="fab-cart" aria-label="View Cart">
+        🛒 <span id="fabCount" class="fab-badge">0</span>
+    </button>
+
+    <!-- Discreet Footer -->
+    <footer>
+        <div>
+            <strong>PHONE HUB</strong> — Premium Smartphone Store © 2026. All Rights Reserved.
+        </div>
+        <div>
+            <a href="admin.html" class="admin-portal-link">Admin Portal</a>
+        </div>
+    </footer>
+
+    <script type="module" src="/src/frontend/js/main.js"></script>
+</body>
+</html>
