@@ -1,7 +1,7 @@
 const asyncWrapper = require('../utils/asyncWrapper');
 
 exports.login = asyncWrapper(async (req, res) => {
-  const adminPassword = process.env.ADMIN_PASSWORD || 'phonehub-admin';
+  const adminPassword = process.env.ADMIN_PASSWORD || 'phonehub123';
   const { password } = req.body;
 
   const isValid = password === adminPassword;
